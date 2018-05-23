@@ -198,6 +198,29 @@ Type::build('timestamp')
 //Inflector::rules('uninflected', ['dontinflectme']);
 //Inflector::rules('transliteration', ['/å/' => 'aa']);
 
+// Inflector::rules('singular',
+// 	array(
+// 		'rules' => array(
+// 			'/(.*)bles$/i' => '\1ble',
+// 			'/(.*)les$/i' => '\1l',
+// 			'/(.*)res$/i' => '\1r',
+// 			'/(.*)nes$/i' => '\1n',
+// 			'/(.*)des$/i' => '\1d',
+// 			'/(.*)ses$/i' => '\1s'
+// 		),
+// 		'irregular' => [],
+// 		'uninflected' => []
+// 	)
+// );
+
+// Inflector::rules('plural', [
+//     'rules' => ['/(.*)l$/i' => '\1les', '/(.*)r$/i' => '\1res', '/(.*)n$/i' => '\1nes', '/(.*)d$/i' => '\1des', '/(.*)s$/i' => '\1ses'],
+//     'irregular' => [], 'uninflected' => []
+// ]);
+
+Configure::write('Config.language', 'spa');
+
+
 /*
  * Plugins need to be loaded manually, you can either load them one by one or all of them in a single call
  * Uncomment one of the lines below, as you need. make sure you read the documentation on Plugin to use more

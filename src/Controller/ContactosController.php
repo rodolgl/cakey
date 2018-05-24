@@ -59,7 +59,7 @@ class ContactosController extends AppController
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The contacto could not be saved. Please, try again.'));
+            $this->Flash->error(__('The contacto could not be saved.Por favor, inténtelo de nuevo.'));
         }
         $empresas = $this->Contactos->Empresas->find('list', ['limit' => 200]);
         $this->set(compact('contacto', 'empresas'));
@@ -84,7 +84,7 @@ class ContactosController extends AppController
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The contacto could not be saved. Please, try again.'));
+            $this->Flash->error(__('The contacto could not be saved.Por favor, inténtelo de nuevo.'));
         }
         $empresas = $this->Contactos->Empresas->find('list', ['limit' => 200]);
         $this->set(compact('contacto', 'empresas'));
@@ -104,7 +104,7 @@ class ContactosController extends AppController
         if ($this->Contactos->delete($contacto)) {
             $this->Flash->success(__('The contacto has been deleted.'));
         } else {
-            $this->Flash->error(__('The contacto could not be deleted. Please, try again.'));
+            $this->Flash->error(__('The contacto could not be deleted.Por favor, inténtelo de nuevo.'));
         }
 
         return $this->redirect(['action' => 'index']);

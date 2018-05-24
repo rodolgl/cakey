@@ -33,24 +33,34 @@ class AppController extends Controller
      *
      * Use this method to add common initialization code like loading components.
      *
-     * e.g. `$this->loadComponent('Security');`
-     *
      * @return void
      */
-    public function initialize()
+     public function initialize()
     {
-        parent::initialize();
-
-        $this->loadComponent('RequestHandler', [
-            'enableBeforeRedirect' => false,
-        ]);
         $this->loadComponent('Flash');
+        // $this->loadComponent('Auth', [
+        //     'authenticate' => [
+        //         'Form' => [
+        //             'fields' => [
+        //                 'username' => 'email',
+        //                 'password' => 'password'
+        //             ]
+        //         ]
+        //     ],
+        //     'loginAction' => [
+        //         'controller' => 'Users',
+        //         'action' => 'login'
+        //     ],
+        //     'unauthorizedRedirect' => $this->referer() // Si no está autorizado,
+        //                     //el usuario regresa a la página que estaba
+        // ]);
+            // Permite ejecutar la acción display para que nuestros controladores de páginas
+        // sigan funcionando.
+        // $this->Auth->allow(['display']);
+    }
 
-        /*
-         * Enable the following components for recommended CakePHP security settings.
-         * see https://book.cakephp.org/3.0/en/controllers/components/security.html
-         */
-        //$this->loadComponent('Security');
-        //$this->loadComponent('Csrf');
+    public function isAuthorized($user)
+    {
+        return false;
     }
 }

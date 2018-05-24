@@ -21,6 +21,6 @@
             echo $this->Form->control('tiempo_sat_insitu');
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Enviar')) ?>
     <?= $this->Form->end() ?>
 </div>

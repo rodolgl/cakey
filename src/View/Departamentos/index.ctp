@@ -30,9 +30,9 @@
                 <td><?= h($departamento->created) ?></td>
                 <td><?= h($departamento->modified) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $departamento->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $departamento->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $departamento->id], ['confirm' => __('Are you sure you want to delete # {0}?', $departamento->id)]) ?>
+                    <?= $this->Html->link(__('Detalle'), ['action' => 'view', $departamento->id]) ?>
+                    <?= $this->Html->link(__('Modificar'), ['action' => 'edit', $departamento->id]) ?>
+                    <?= $this->Form->postLink(__('Borrar'), ['action' => 'delete', $departamento->id], ['confirm' => __('Are you sure you want to delete # {0}?', $departamento->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

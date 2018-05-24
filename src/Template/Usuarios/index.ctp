@@ -21,6 +21,7 @@
                 <th scope="col"><?= $this->Paginator->sort('departamento_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('nombre') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('apellido') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('password') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('email') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
@@ -31,9 +32,10 @@
             <?php foreach ($usuarios as $usuario): ?>
             <tr>
                 <td><?= $this->Number->format($usuario->id) ?></td>
-                <td><?= $usuario->has('departamento') ? $this->Html->link($usuario->departamento->id, ['controller' => 'Departamentos', 'action' => 'view', $usuario->departamento->id]) : '' ?></td>
+                <td><?= $usuario->has('departamento') ? $this->Html->link($usuario->departamento->nombre, ['controller' => 'Departamentos', 'action' => 'view', $usuario->departamento->id]) : '' ?></td>
                 <td><?= h($usuario->nombre) ?></td>
                 <td><?= h($usuario->apellido) ?></td>
+                <td><?= h($usuario->password) ?></td>
                 <td><?= h($usuario->email) ?></td>
                 <td><?= h($usuario->created) ?></td>
                 <td><?= h($usuario->modified) ?></td>

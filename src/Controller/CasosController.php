@@ -59,7 +59,7 @@ class CasosController extends AppController
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The caso could not be saved. Please, try again.'));
+            $this->Flash->error(__('The caso could not be saved.Por favor, inténtelo de nuevo.'));
         }
         $usuarios = $this->Casos->Usuarios->find('list', ['limit' => 200]);
         $empresas = $this->Casos->Empresas->find('list', ['limit' => 200]);
@@ -86,7 +86,7 @@ class CasosController extends AppController
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The caso could not be saved. Please, try again.'));
+            $this->Flash->error(__('The caso could not be saved.Por favor, inténtelo de nuevo.'));
         }
         $usuarios = $this->Casos->Usuarios->find('list', ['limit' => 200]);
         $empresas = $this->Casos->Empresas->find('list', ['limit' => 200]);
@@ -108,7 +108,7 @@ class CasosController extends AppController
         if ($this->Casos->delete($caso)) {
             $this->Flash->success(__('The caso has been deleted.'));
         } else {
-            $this->Flash->error(__('The caso could not be deleted. Please, try again.'));
+            $this->Flash->error(__('The caso could not be deleted.Por favor, inténtelo de nuevo.'));
         }
 
         return $this->redirect(['action' => 'index']);

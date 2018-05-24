@@ -99,7 +99,7 @@ class DepartamentosController extends AppController
         if ($this->Departamentos->delete($departamento)) {
             $this->Flash->success(__('El departamento has been deleted.'));
         } else {
-            $this->Flash->error(__('El departamento could not be deleted. Please, try again.'));
+            $this->Flash->error(__('El departamento could not be deleted.Por favor, inténtelo de nuevo.'));
         }
 
         return $this->redirect(['action' => 'index']);

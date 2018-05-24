@@ -10,6 +10,7 @@ use Cake\ORM\Entity;
  * @property int $departamento_id
  * @property string $nombre
  * @property string $apellido
+ * @property string $password
  * @property string $email
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
@@ -31,9 +32,19 @@ class Usuario extends Entity
     protected $_accessible = [
         'nombre' => true,
         'apellido' => true,
+        'password' => true,
         'email' => true,
         'created' => true,
         'modified' => true,
         'departamento' => true
+    ];
+
+    /**
+     * Fields that are excluded from JSON versions of the entity.
+     *
+     * @var array
+     */
+    protected $_hidden = [
+        'password'
     ];
 }

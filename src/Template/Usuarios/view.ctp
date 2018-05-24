@@ -20,7 +20,7 @@
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Departamento') ?></th>
-            <td><?= $usuario->has('departamento') ? $this->Html->link($usuario->departamento->id, ['controller' => 'Departamentos', 'action' => 'view', $usuario->departamento->id]) : '' ?></td>
+            <td><?= $usuario->has('departamento') ? $this->Html->link($usuario->departamento->nombre, ['controller' => 'Departamentos', 'action' => 'view', $usuario->departamento->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Nombre') ?></th>
@@ -29,6 +29,10 @@
         <tr>
             <th scope="row"><?= __('Apellido') ?></th>
             <td><?= h($usuario->apellido) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Password') ?></th>
+            <td><?= h($usuario->password) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Email') ?></th>

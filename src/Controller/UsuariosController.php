@@ -59,7 +59,7 @@ class UsuariosController extends AppController
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The usuario could not be saved. Please, try again.'));
+            $this->Flash->error(__('The usuario could not be saved.Por favor, inténtelo de nuevo.'));
         }
         $departamentos = $this->Usuarios->Departamentos->find('list', ['limit' => 200]);
         $this->set(compact('usuario', 'departamentos'));
@@ -84,7 +84,7 @@ class UsuariosController extends AppController
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The usuario could not be saved. Please, try again.'));
+            $this->Flash->error(__('The usuario could not be saved.Por favor, inténtelo de nuevo.'));
         }
         $departamentos = $this->Usuarios->Departamentos->find('list', ['limit' => 200]);
         $this->set(compact('usuario', 'departamentos'));
@@ -104,7 +104,7 @@ class UsuariosController extends AppController
         if ($this->Usuarios->delete($usuario)) {
             $this->Flash->success(__('The usuario has been deleted.'));
         } else {
-            $this->Flash->error(__('The usuario could not be deleted. Please, try again.'));
+            $this->Flash->error(__('The usuario could not be deleted.Por favor, inténtelo de nuevo.'));
         }
 
         return $this->redirect(['action' => 'index']);

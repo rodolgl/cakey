@@ -56,7 +56,7 @@ class TipoAsistenciasController extends AppController
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The tipo asistencia could not be saved. Please, try again.'));
+            $this->Flash->error(__('The tipo asistencia could not be saved.Por favor, inténtelo de nuevo.'));
         }
         $this->set(compact('tipoAsistencia'));
     }
@@ -80,7 +80,7 @@ class TipoAsistenciasController extends AppController
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The tipo asistencia could not be saved. Please, try again.'));
+            $this->Flash->error(__('The tipo asistencia could not be saved.Por favor, inténtelo de nuevo.'));
         }
         $this->set(compact('tipoAsistencia'));
     }
@@ -99,7 +99,7 @@ class TipoAsistenciasController extends AppController
         if ($this->TipoAsistencias->delete($tipoAsistencia)) {
             $this->Flash->success(__('The tipo asistencia has been deleted.'));
         } else {
-            $this->Flash->error(__('The tipo asistencia could not be deleted. Please, try again.'));
+            $this->Flash->error(__('The tipo asistencia could not be deleted.Por favor, inténtelo de nuevo.'));
         }
 
         return $this->redirect(['action' => 'index']);

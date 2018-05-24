@@ -59,7 +59,7 @@ class ContratosController extends AppController
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The contrato could not be saved. Please, try again.'));
+            $this->Flash->error(__('The contrato could not be saved.Por favor, inténtelo de nuevo.'));
         }
         $empresas = $this->Contratos->Empresas->find('list', ['limit' => 200]);
         $this->set(compact('contrato', 'empresas'));
@@ -84,7 +84,7 @@ class ContratosController extends AppController
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The contrato could not be saved. Please, try again.'));
+            $this->Flash->error(__('The contrato could not be saved.Por favor, inténtelo de nuevo.'));
         }
         $empresas = $this->Contratos->Empresas->find('list', ['limit' => 200]);
         $this->set(compact('contrato', 'empresas'));
@@ -104,7 +104,7 @@ class ContratosController extends AppController
         if ($this->Contratos->delete($contrato)) {
             $this->Flash->success(__('The contrato has been deleted.'));
         } else {
-            $this->Flash->error(__('The contrato could not be deleted. Please, try again.'));
+            $this->Flash->error(__('The contrato could not be deleted.Por favor, inténtelo de nuevo.'));
         }
 
         return $this->redirect(['action' => 'index']);

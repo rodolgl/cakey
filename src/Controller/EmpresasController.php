@@ -56,7 +56,7 @@ class EmpresasController extends AppController
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The empresa could not be saved. Please, try again.'));
+            $this->Flash->error(__('The empresa could not be saved.Por favor, inténtelo de nuevo.'));
         }
         $this->set(compact('empresa'));
     }
@@ -80,7 +80,7 @@ class EmpresasController extends AppController
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The empresa could not be saved. Please, try again.'));
+            $this->Flash->error(__('The empresa could not be saved.Por favor, inténtelo de nuevo.'));
         }
         $this->set(compact('empresa'));
     }
@@ -99,7 +99,7 @@ class EmpresasController extends AppController
         if ($this->Empresas->delete($empresa)) {
             $this->Flash->success(__('The empresa has been deleted.'));
         } else {
-            $this->Flash->error(__('The empresa could not be deleted. Please, try again.'));
+            $this->Flash->error(__('The empresa could not be deleted.Por favor, inténtelo de nuevo.'));
         }
 
         return $this->redirect(['action' => 'index']);

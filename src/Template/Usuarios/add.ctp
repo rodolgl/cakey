@@ -19,6 +19,7 @@
         <?php
             echo $this->Form->control('nombre');
             echo $this->Form->control('apellido');
+            echo $this->Form->control('password');
             echo $this->Form->control('email');
         ?>
     </fieldset>

@@ -54,6 +54,8 @@ class UsuariosController extends AppController
         $usuario = $this->Usuarios->newEntity();
         if ($this->request->is('post')) {
             $usuario = $this->Usuarios->patchEntity($usuario, $this->request->getData());
+
+            // $usuario = $this->Usuarios->patchEntity($usuario, $this->request->getData());
             if ($this->Usuarios->save($usuario)) {
                 $this->Flash->success(__('The usuario has been saved.'));
 

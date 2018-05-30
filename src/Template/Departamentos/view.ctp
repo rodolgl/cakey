@@ -6,7 +6,7 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+        <li class="heading"><?= __('Acciones') ?></li>
         <li><?= $this->Html->link(__('Edit Departamento'), ['action' => 'edit', $departamento->id]) ?> </li>
         <li><?= $this->Form->postLink(__('Delete Departamento'), ['action' => 'delete', $departamento->id], ['confirm' => __('Are you sure you want to delete # {0}?', $departamento->id)]) ?> </li>
         <li><?= $this->Html->link(__('List Departamentos'), ['action' => 'index']) ?> </li>
@@ -16,7 +16,7 @@
     </ul>
 </nav>
 <div class="departamentos view large-9 medium-8 columns content">
-    <h3><?= h($departamento->id) ?></h3>
+    <h3><?= h($departamento->nombre) ?></h3>
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Nombre') ?></th>
@@ -45,9 +45,11 @@
                 <th scope="col"><?= __('Nombre') ?></th>
                 <th scope="col"><?= __('Apellido') ?></th>
                 <th scope="col"><?= __('Email') ?></th>
+                <th scope="col"><?= __('Password') ?></th>
+                <th scope="col"><?= __('Telefono') ?></th>
                 <th scope="col"><?= __('Created') ?></th>
                 <th scope="col"><?= __('Modified') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                 <th scope="col" class="actions"><?= __('Acciones') ?></th>
             </tr>
             <?php foreach ($departamento->usuarios as $usuarios): ?>
             <tr>
@@ -56,6 +58,8 @@
                 <td><?= h($usuarios->nombre) ?></td>
                 <td><?= h($usuarios->apellido) ?></td>
                 <td><?= h($usuarios->email) ?></td>
+                <td><?= h($usuarios->password) ?></td>
+                <td><?= h($usuarios->telefono) ?></td>
                 <td><?= h($usuarios->created) ?></td>
                 <td><?= h($usuarios->modified) ?></td>
                 <td class="actions">

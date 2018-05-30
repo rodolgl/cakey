@@ -6,7 +6,7 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+        <li class="heading"><?= __('Acciones') ?></li>
         <li><?= $this->Html->link(__('New Usuario'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Departamentos'), ['controller' => 'Departamentos', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Departamento'), ['controller' => 'Departamentos', 'action' => 'add']) ?></li>
@@ -17,28 +17,22 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('departamento_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('nombre') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('apellido') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('password') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('email') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('telefono') ?></th>
+                 <th scope="col" class="actions"><?= __('Acciones') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($usuarios as $usuario): ?>
             <tr>
-                <td><?= $this->Number->format($usuario->id) ?></td>
                 <td><?= $usuario->has('departamento') ? $this->Html->link($usuario->departamento->nombre, ['controller' => 'Departamentos', 'action' => 'view', $usuario->departamento->id]) : '' ?></td>
                 <td><?= h($usuario->nombre) ?></td>
                 <td><?= h($usuario->apellido) ?></td>
-                <td><?= h($usuario->password) ?></td>
                 <td><?= h($usuario->email) ?></td>
-                <td><?= h($usuario->created) ?></td>
-                <td><?= h($usuario->modified) ?></td>
+                <td><?= h($usuario->telefono) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $usuario->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $usuario->id]) ?>

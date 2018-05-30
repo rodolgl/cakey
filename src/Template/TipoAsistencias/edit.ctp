@@ -6,7 +6,7 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+        <li class="heading"><?= __('Acciones') ?></li>
         <li><?= $this->Form->postLink(
                 __('Delete'),
                 ['action' => 'delete', $tipoAsistencia->id],
@@ -26,6 +26,6 @@
             echo $this->Form->control('nombre');
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Enviar')) ?>
+    <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
 </div>

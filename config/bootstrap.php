@@ -198,27 +198,27 @@ Type::build('timestamp')
 //Inflector::rules('uninflected', ['dontinflectme']);
 //Inflector::rules('transliteration', ['/å/' => 'aa']);
 
-// Inflector::rules('singular',
-// 	array(
-// 		'rules' => array(
-// 			'/(.*)bles$/i' => '\1ble',
-// 			'/(.*)les$/i' => '\1l',
-// 			'/(.*)res$/i' => '\1r',
-// 			'/(.*)nes$/i' => '\1n',
-// 			'/(.*)des$/i' => '\1d',
-// 			'/(.*)ses$/i' => '\1s'
-// 		),
-// 		'irregular' => [],
-// 		'uninflected' => []
-// 	)
-// );
+Inflector::rules('plural', [
+            '/(.*)r$/i' => '\1res',    // error => errores
+            '/(.*)n$/i' => '\1nes',    // camion => camiones
+            '/(.*)d$/i' => '\1des',    // ciudad => ciudades
+            '/(.*)s$/i' => '\1ses',    // pais => paises
+            '/(.*)l$/i' => '\1les',    // local => locales
+            '/(.*)o$/i' => '\1os',    // carro => carros
+            '/(.*)e$/i' => '\1es',    // carne => carnes
+]);
 
-// Inflector::rules('plural', [
-//     'rules' => ['/(.*)l$/i' => '\1les', '/(.*)r$/i' => '\1res', '/(.*)n$/i' => '\1nes', '/(.*)d$/i' => '\1des', '/(.*)s$/i' => '\1ses'],
-//     'irregular' => [], 'uninflected' => []
-// ]);
+Inflector::rules('singular', [
+            '/(.*)res$/i' => '\1r',
+            '/(.*)nes$/i' => '\1n',
+            '/(.*)des$/i' => '\1d',
+            '/(.*)ses$/i' => '\1s',
+            '/(.*)les$/i' => '\1l',
+            '/(.*)os$/i' => '\1o',
+            '/(.*)es$/i' => '\1e',
+]);
 
-Configure::write('Config.language', 'spa');
+// Configure::write('Config.language', 'spa');
 
 
 /*

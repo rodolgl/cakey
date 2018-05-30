@@ -6,10 +6,10 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Nuevo Departamento'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('Lista Usuarios'), ['controller' => 'Usuarios', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('Nuevo Usuario'), ['controller' => 'Usuarios', 'action' => 'add']) ?></li>
+        <li class="heading"><?= __('Acciones') ?></li>
+        <li><?= $this->Html->link(__('New Departamento'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Usuarios'), ['controller' => 'Usuarios', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Usuario'), ['controller' => 'Usuarios', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="departamentos index large-9 medium-8 columns content">
@@ -17,22 +17,24 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
+                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('nombre') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                 <th scope="col" class="actions"><?= __('Acciones') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($departamentos as $departamento): ?>
             <tr>
+                <td><?= $this->Number->format($departamento->id) ?></td>
                 <td><?= h($departamento->nombre) ?></td>
                 <td><?= h($departamento->created) ?></td>
                 <td><?= h($departamento->modified) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('Detalle'), ['action' => 'view', $departamento->id]) ?>
-                    <?= $this->Html->link(__('Modificar'), ['action' => 'edit', $departamento->id]) ?>
-                    <?= $this->Form->postLink(__('Borrar'), ['action' => 'delete', $departamento->id], ['confirm' => __('Are you sure you want to delete # {0}?', $departamento->id)]) ?>
+                    <?= $this->Html->link(__('View'), ['action' => 'view', $departamento->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $departamento->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $departamento->id], ['confirm' => __('Are you sure you want to delete # {0}?', $departamento->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

@@ -6,7 +6,7 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+        <li class="heading"><?= __('Acciones') ?></li>
         <li><?= $this->Html->link(__('Edit Empresa'), ['action' => 'edit', $empresa->id]) ?> </li>
         <li><?= $this->Form->postLink(__('Delete Empresa'), ['action' => 'delete', $empresa->id], ['confirm' => __('Are you sure you want to delete # {0}?', $empresa->id)]) ?> </li>
         <li><?= $this->Html->link(__('List Empresas'), ['action' => 'index']) ?> </li>
@@ -78,7 +78,7 @@
                 <th scope="col"><?= __('Tipo Asistencia Id') ?></th>
                 <th scope="col"><?= __('Created') ?></th>
                 <th scope="col"><?= __('Modified') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                 <th scope="col" class="actions"><?= __('Acciones') ?></th>
             </tr>
             <?php foreach ($empresa->casos as $casos): ?>
             <tr>
@@ -115,7 +115,7 @@
                 <th scope="col"><?= __('Email') ?></th>
                 <th scope="col"><?= __('Created') ?></th>
                 <th scope="col"><?= __('Modified') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                 <th scope="col" class="actions"><?= __('Acciones') ?></th>
             </tr>
             <?php foreach ($empresa->contactos as $contactos): ?>
             <tr>
@@ -148,7 +148,7 @@
                 <th scope="col"><?= __('Tiempo Sat Insitu') ?></th>
                 <th scope="col"><?= __('Created') ?></th>
                 <th scope="col"><?= __('Modified') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                 <th scope="col" class="actions"><?= __('Acciones') ?></th>
             </tr>
             <?php foreach ($empresa->contratos as $contratos): ?>
             <tr>

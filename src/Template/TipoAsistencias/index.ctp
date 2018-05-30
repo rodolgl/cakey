@@ -6,7 +6,7 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+        <li class="heading"><?= __('Acciones') ?></li>
         <li><?= $this->Html->link(__('New Tipo Asistencia'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Casos'), ['controller' => 'Casos', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Caso'), ['controller' => 'Casos', 'action' => 'add']) ?></li>
@@ -17,20 +17,14 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('nombre') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                 <th scope="col" class="actions"><?= __('Acciones') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($tipoAsistencias as $tipoAsistencia): ?>
             <tr>
-                <td><?= $this->Number->format($tipoAsistencia->id) ?></td>
                 <td><?= h($tipoAsistencia->nombre) ?></td>
-                <td><?= h($tipoAsistencia->created) ?></td>
-                <td><?= h($tipoAsistencia->modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $tipoAsistencia->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $tipoAsistencia->id]) ?>

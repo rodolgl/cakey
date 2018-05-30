@@ -11,6 +11,13 @@ class DepartamentosFixture extends TestFixture
 {
 
     /**
+     * Table name
+     *
+     * @var string
+     */
+    public $table = 'departamentos';
+
+    /**
      * Fields
      *
      * @var array
@@ -42,8 +49,8 @@ class DepartamentosFixture extends TestFixture
             [
                 'id' => 1,
                 'nombre' => 'Lorem ipsum dolor sit amet',
-                'created' => '2018-05-23 12:24:28',
-                'modified' => '2018-05-23 12:24:28'
+                'created' => '2018-05-30 15:07:00',
+                'modified' => '2018-05-30 15:07:00'
             ],
         ];
         parent::init();

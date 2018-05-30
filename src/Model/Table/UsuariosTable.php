@@ -10,6 +10,7 @@ use Cake\Validation\Validator;
  * Usuarios Model
  *
  * @property \App\Model\Table\DepartamentosTable|\Cake\ORM\Association\BelongsTo $Departamentos
+ * @property |\Cake\ORM\Association\HasMany $Casos
  *
  * @method \App\Model\Entity\Usuario get($primaryKey, $options = [])
  * @method \App\Model\Entity\Usuario newEntity($data = null, array $options = [])
@@ -36,13 +37,16 @@ class UsuariosTable extends Table
 
         $this->setTable('usuarios');
         $this->setDisplayField('id');
-        $this->setPrimaryKey(['id', 'departamento_id']);
+        $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
 
         $this->belongsTo('Departamentos', [
             'foreignKey' => 'departamento_id',
             'joinType' => 'INNER'
+        ]);
+        $this->hasMany('Casos', [
+            'foreignKey' => 'usuario_id'
         ]);
     }
 
@@ -74,6 +78,17 @@ class UsuariosTable extends Table
             ->email('email')
             ->requirePresence('email', 'create')
             ->notEmpty('email');
+
+        $validator
+            ->scalar('password')
+            ->maxLength('password', 255)
+            ->requirePresence('password', 'create')
+            ->notEmpty('password');
+
+        $validator
+            ->scalar('telefono')
+            ->maxLength('telefono', 255)
+            ->allowEmpty('telefono');
 
         return $validator;
     }

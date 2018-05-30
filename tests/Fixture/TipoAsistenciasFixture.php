@@ -11,6 +11,13 @@ class TipoAsistenciasFixture extends TestFixture
 {
 
     /**
+     * Table name
+     *
+     * @var string
+     */
+    public $table = 'tipo_asistencias';
+
+    /**
      * Fields
      *
      * @var array
@@ -42,8 +49,8 @@ class TipoAsistenciasFixture extends TestFixture
             [
                 'id' => 1,
                 'nombre' => 'Lorem ipsum dolor sit amet',
-                'created' => '2018-05-23 14:45:15',
-                'modified' => '2018-05-23 14:45:15'
+                'created' => '2018-05-30 15:43:56',
+                'modified' => '2018-05-30 15:43:56'
             ],
         ];
         parent::init();

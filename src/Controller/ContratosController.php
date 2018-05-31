@@ -55,7 +55,7 @@ class ContratosController extends AppController
         if ($this->request->is('post')) {
             $contrato = $this->Contratos->patchEntity($contrato, $this->request->getData());
             if ($this->Contratos->save($contrato)) {
-                $this->Flash->success(__('The contrato has been saved.'));
+                $this->Flash->success(__('The contrato ha sido guardado.'));
 
                 return $this->redirect(['action' => 'index']);
             }
@@ -80,7 +80,7 @@ class ContratosController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $contrato = $this->Contratos->patchEntity($contrato, $this->request->getData());
             if ($this->Contratos->save($contrato)) {
-                $this->Flash->success(__('The contrato has been saved.'));
+                $this->Flash->success(__('The contrato ha sido guardado.'));
 
                 return $this->redirect(['action' => 'index']);
             }

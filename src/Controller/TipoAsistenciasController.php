@@ -52,7 +52,7 @@ class TipoAsistenciasController extends AppController
         if ($this->request->is('post')) {
             $tipoAsistencia = $this->TipoAsistencias->patchEntity($tipoAsistencia, $this->request->getData());
             if ($this->TipoAsistencias->save($tipoAsistencia)) {
-                $this->Flash->success(__('The tipo asistencia has been saved.'));
+                $this->Flash->success(__('The tipo asistencia ha sido guardado.'));
 
                 return $this->redirect(['action' => 'index']);
             }
@@ -76,7 +76,7 @@ class TipoAsistenciasController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $tipoAsistencia = $this->TipoAsistencias->patchEntity($tipoAsistencia, $this->request->getData());
             if ($this->TipoAsistencias->save($tipoAsistencia)) {
-                $this->Flash->success(__('The tipo asistencia has been saved.'));
+                $this->Flash->success(__('The tipo asistencia ha sido guardado.'));
 
                 return $this->redirect(['action' => 'index']);
             }

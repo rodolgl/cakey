@@ -52,7 +52,7 @@ class DepartamentosController extends AppController
         if ($this->request->is('post')) {
             $departamento = $this->Departamentos->patchEntity($departamento, $this->request->getData());
             if ($this->Departamentos->save($departamento)) {
-                $this->Flash->success(__('The departamento has been saved.'));
+                $this->Flash->success(__('The departamento ha sido guardado.'));
 
                 return $this->redirect(['action' => 'index']);
             }
@@ -76,7 +76,7 @@ class DepartamentosController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $departamento = $this->Departamentos->patchEntity($departamento, $this->request->getData());
             if ($this->Departamentos->save($departamento)) {
-                $this->Flash->success(__('The departamento has been saved.'));
+                $this->Flash->success(__('The departamento ha sido guardado.'));
 
                 return $this->redirect(['action' => 'index']);
             }

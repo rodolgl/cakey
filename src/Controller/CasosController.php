@@ -55,7 +55,7 @@ class CasosController extends AppController
         if ($this->request->is('post')) {
             $caso = $this->Casos->patchEntity($caso, $this->request->getData());
             if ($this->Casos->save($caso)) {
-                $this->Flash->success(__('The caso has been saved.'));
+                $this->Flash->success(__('The caso ha sido guardado.'));
 
                 return $this->redirect(['action' => 'index']);
             }
@@ -82,7 +82,7 @@ class CasosController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $caso = $this->Casos->patchEntity($caso, $this->request->getData());
             if ($this->Casos->save($caso)) {
-                $this->Flash->success(__('The caso has been saved.'));
+                $this->Flash->success(__('The caso ha sido guardado.'));
 
                 return $this->redirect(['action' => 'index']);
             }

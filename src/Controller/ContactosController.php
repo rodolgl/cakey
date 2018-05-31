@@ -55,7 +55,7 @@ class ContactosController extends AppController
         if ($this->request->is('post')) {
             $contacto = $this->Contactos->patchEntity($contacto, $this->request->getData());
             if ($this->Contactos->save($contacto)) {
-                $this->Flash->success(__('The contacto has been saved.'));
+                $this->Flash->success(__('The contacto ha sido guardado.'));
 
                 return $this->redirect(['action' => 'index']);
             }
@@ -80,7 +80,7 @@ class ContactosController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $contacto = $this->Contactos->patchEntity($contacto, $this->request->getData());
             if ($this->Contactos->save($contacto)) {
-                $this->Flash->success(__('The contacto has been saved.'));
+                $this->Flash->success(__('The contacto ha sido guardado.'));
 
                 return $this->redirect(['action' => 'index']);
             }

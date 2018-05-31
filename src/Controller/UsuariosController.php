@@ -57,7 +57,7 @@ class UsuariosController extends AppController
 
             // $usuario = $this->Usuarios->patchEntity($usuario, $this->request->getData());
             if ($this->Usuarios->save($usuario)) {
-                $this->Flash->success(__('The usuario has been saved.'));
+                $this->Flash->success(__('The usuario ha sido guardado.'));
 
                 return $this->redirect(['action' => 'index']);
             }
@@ -82,7 +82,7 @@ class UsuariosController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $usuario = $this->Usuarios->patchEntity($usuario, $this->request->getData());
             if ($this->Usuarios->save($usuario)) {
-                $this->Flash->success(__('The usuario has been saved.'));
+                $this->Flash->success(__('The usuario ha sido guardado.'));
 
                 return $this->redirect(['action' => 'index']);
             }

@@ -52,7 +52,7 @@ class EmpresasController extends AppController
         if ($this->request->is('post')) {
             $empresa = $this->Empresas->patchEntity($empresa, $this->request->getData());
             if ($this->Empresas->save($empresa)) {
-                $this->Flash->success(__('The empresa has been saved.'));
+                $this->Flash->success(__('The empresa ha sido guardado.'));
 
                 return $this->redirect(['action' => 'index']);
             }
@@ -76,7 +76,7 @@ class EmpresasController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $empresa = $this->Empresas->patchEntity($empresa, $this->request->getData());
             if ($this->Empresas->save($empresa)) {
-                $this->Flash->success(__('The empresa has been saved.'));
+                $this->Flash->success(__('The empresa ha sido guardado.'));
 
                 return $this->redirect(['action' => 'index']);
             }

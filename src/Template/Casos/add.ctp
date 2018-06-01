@@ -30,10 +30,12 @@
             ]);
             echo $this->Form->control('solicitud');
             echo $this->Form->control('gravedad_id', [
-                'options' => $gravedad,
+                'options' => $gravedades,
                 'empty' => 'Seleccione']);
-            echo $this->Form->control('tipo_asistencia_id', ['options' => $tipo_asistencia]);
-            echo $this->Form->control('tiempo');
+            echo $this->Form->control('tipo_asistencia_id', [
+                'options' => $tipoAsistencias,
+                'empty' => 'Seleccione'
+            ]);
             echo $this->Form->control('observaciones');
             echo $this->Form->control('si_solucionado');
             echo $this->Form->control('tiempo');

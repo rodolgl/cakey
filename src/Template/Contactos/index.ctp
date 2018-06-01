@@ -29,7 +29,6 @@
         <tbody>
             <?php foreach ($contactos as $contacto): ?>
             <tr>
-                <td><?= $this->Number->format($contacto->id) ?></td>
                 <td><?= $contacto->has('empresa') ? $this->Html->link($contacto->empresa->id, ['controller' => 'Empresas', 'action' => 'view', $contacto->empresa->id]) : '' ?></td>
                 <td><?= h($contacto->nombre) ?></td>
                 <td><?= h($contacto->apellido) ?></td>

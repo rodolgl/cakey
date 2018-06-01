@@ -35,7 +35,7 @@ class TipoAsistenciasTable extends Table
         parent::initialize($config);
 
         $this->setTable('tipo_asistencias');
-        $this->setDisplayField('id');
+        $this->setDisplayField('nombre');
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');

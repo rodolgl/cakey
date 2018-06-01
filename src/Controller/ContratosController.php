@@ -55,14 +55,15 @@ class ContratosController extends AppController
         if ($this->request->is('post')) {
             $contrato = $this->Contratos->patchEntity($contrato, $this->request->getData());
             if ($this->Contratos->save($contrato)) {
-                $this->Flash->success(__('The contrato ha sido guardado.'));
+                $this->Flash->success(__('The contrato has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The contrato could not be saved.Por favor, inténtelo de nuevo.'));
         }
         $empresas = $this->Contratos->Empresas->find('list', ['limit' => 200]);
-        $this->set(compact('contrato', 'empresas'));
+        $usuarios = $this->Contratos->Usuarios->find('list', ['limit' => 200]);
+        $this->set(compact('contrato', 'empresas', 'usuarios'));
     }
 
     /**
@@ -80,7 +81,7 @@ class ContratosController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $contrato = $this->Contratos->patchEntity($contrato, $this->request->getData());
             if ($this->Contratos->save($contrato)) {
-                $this->Flash->success(__('The contrato ha sido guardado.'));
+                $this->Flash->success(__('The contrato has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }

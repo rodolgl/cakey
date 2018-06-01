@@ -6,7 +6,7 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Acciones') ?></li>
+        <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Contrato'), ['action' => 'edit', $contrato->id]) ?> </li>
         <li><?= $this->Form->postLink(__('Delete Contrato'), ['action' => 'delete', $contrato->id], ['confirm' => __('Are you sure you want to delete # {0}?', $contrato->id)]) ?> </li>
         <li><?= $this->Html->link(__('List Contratos'), ['action' => 'index']) ?> </li>
@@ -20,19 +20,35 @@
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Empresa') ?></th>
-            <td><?= $contrato->has('empresa') ? $this->Html->link($contrato->empresa->id, ['controller' => 'Empresas', 'action' => 'view', $contrato->empresa->id]) : '' ?></td>
+            <td><?= $contrato->has('empresa') ? $this->Html->link($contrato->empresa->nombre_corto, ['controller' => 'Empresas', 'action' => 'view', $contrato->empresa->id]) : '' ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Tiempo Sat Remoto') ?></th>
-            <td><?= h($contrato->tiempo_sat_remoto) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Tiempo Sat Insitu') ?></th>
-            <td><?= h($contrato->tiempo_sat_insitu) ?></td>
+            <th scope="row"><?= __('Precio Anual') ?></th>
+            <td><?= h($contrato->precio_anual) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($contrato->id) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Usuario Id') ?></th>
+            <td><?= $this->Number->format($contrato->usuario_id) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Usuario Departamento Id') ?></th>
+            <td><?= $this->Number->format($contrato->usuario_departamento_id) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Num Contrato') ?></th>
+            <td><?= $this->Number->format($contrato->num_contrato) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Fecha Inicio') ?></th>
+            <td><?= h($contrato->fecha_inicio) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Fecha Fin') ?></th>
+            <td><?= h($contrato->fecha_fin) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Created') ?></th>
@@ -43,4 +59,8 @@
             <td><?= h($contrato->modified) ?></td>
         </tr>
     </table>
+    <div class="row">
+        <h4><?= __('Observaciones') ?></h4>
+        <?= $this->Text->autoParagraph(h($contrato->observaciones)); ?>
+    </div>
 </div>

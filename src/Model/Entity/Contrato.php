@@ -8,8 +8,13 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property int $empresa_id
- * @property string $tiempo_sat_remoto
- * @property string $tiempo_sat_insitu
+ * @property int $usuario_id
+ * @property int $usuario_departamento_id
+ * @property int $num_contrato
+ * @property \Cake\I18n\FrozenDate $fecha_inicio
+ * @property \Cake\I18n\FrozenDate $fecha_fin
+ * @property string $observaciones
+ * @property string $precio_anual
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  *
@@ -28,8 +33,11 @@ class Contrato extends Entity
      * @var array
      */
     protected $_accessible = [
-        'tiempo_sat_remoto' => true,
-        'tiempo_sat_insitu' => true,
+        'num_contrato' => true,
+        'fecha_inicio' => true,
+        'fecha_fin' => true,
+        'observaciones' => true,
+        'precio_anual' => true,
         'created' => true,
         'modified' => true,
         'empresa' => true

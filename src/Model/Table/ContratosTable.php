@@ -10,6 +10,8 @@ use Cake\Validation\Validator;
  * Contratos Model
  *
  * @property \App\Model\Table\EmpresasTable|\Cake\ORM\Association\BelongsTo $Empresas
+ * @property |\Cake\ORM\Association\BelongsTo $Usuarios
+ * @property |\Cake\ORM\Association\BelongsTo $Usuarios
  *
  * @method \App\Model\Entity\Contrato get($primaryKey, $options = [])
  * @method \App\Model\Entity\Contrato newEntity($data = null, array $options = [])
@@ -44,6 +46,14 @@ class ContratosTable extends Table
             'foreignKey' => 'empresa_id',
             'joinType' => 'INNER'
         ]);
+        $this->belongsTo('Usuarios', [
+            'foreignKey' => 'usuario_id',
+            'joinType' => 'INNER'
+        ]);
+        $this->belongsTo('Usuarios', [
+            'foreignKey' => 'usuario_departamento_id',
+            'joinType' => 'INNER'
+        ]);
     }
 
     /**
@@ -59,14 +69,27 @@ class ContratosTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->scalar('tiempo_sat_remoto')
-            ->maxLength('tiempo_sat_remoto', 45)
-            ->allowEmpty('tiempo_sat_remoto');
+            ->integer('num_contrato')
+            ->requirePresence('num_contrato', 'create')
+            ->notEmpty('num_contrato');
 
         $validator
-            ->scalar('tiempo_sat_insitu')
-            ->maxLength('tiempo_sat_insitu', 45)
-            ->allowEmpty('tiempo_sat_insitu');
+            ->date('fecha_inicio')
+            ->requirePresence('fecha_inicio', 'create')
+            ->notEmpty('fecha_inicio');
+
+        $validator
+            ->date('fecha_fin')
+            ->allowEmpty('fecha_fin');
+
+        $validator
+            ->scalar('observaciones')
+            ->allowEmpty('observaciones');
+
+        $validator
+            ->scalar('precio_anual')
+            ->maxLength('precio_anual', 45)
+            ->allowEmpty('precio_anual');
 
         return $validator;
     }
@@ -81,6 +104,8 @@ class ContratosTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['empresa_id'], 'Empresas'));
+        $rules->add($rules->existsIn(['usuario_id'], 'Usuarios'));
+        $rules->add($rules->existsIn(['usuario_departamento_id'], 'Usuarios'));
 
         return $rules;
     }

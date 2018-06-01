@@ -35,7 +35,7 @@ class ContactosTable extends Table
         parent::initialize($config);
 
         $this->setTable('contactos');
-        $this->setDisplayField('id');
+        $this->setDisplayField('nombre');
         $this->setPrimaryKey(['id']);
 
         $this->addBehavior('Timestamp');

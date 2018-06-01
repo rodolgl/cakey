@@ -22,6 +22,7 @@
             echo $this->Form->control('email');
             echo $this->Form->control('password');
             echo $this->Form->control('telefono');
+            echo $this->Form->control('extension');
             echo $this->Form->control('departamento_id', ['options' => $departamentos]);
 
         ?>

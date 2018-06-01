@@ -21,7 +21,6 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('nombre') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('nombre_corto') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('email') ?></th>
@@ -29,7 +28,6 @@
                 <th scope="col"><?= $this->Paginator->sort('municipio') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('provincia') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('pais') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                  <th scope="col" class="actions"><?= __('Acciones') ?></th>
             </tr>
@@ -37,7 +35,6 @@
         <tbody>
             <?php foreach ($empresas as $empresa): ?>
             <tr>
-                <td><?= $this->Number->format($empresa->id) ?></td>
                 <td><?= h($empresa->nombre) ?></td>
                 <td><?= h($empresa->nombre_corto) ?></td>
                 <td><?= h($empresa->email) ?></td>
@@ -45,8 +42,6 @@
                 <td><?= h($empresa->municipio) ?></td>
                 <td><?= h($empresa->provincia) ?></td>
                 <td><?= h($empresa->pais) ?></td>
-                <td><?= h($empresa->created) ?></td>
-                <td><?= h($empresa->modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $empresa->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $empresa->id]) ?>

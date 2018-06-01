@@ -36,9 +36,10 @@ class Usuario extends Entity
         'email' => true,
         'password' => true,
         'telefono' => true,
+        'extension' => true,
+        'departamento_id' => true,
         'created' => true,
-        'modified' => true,
-        'departamento_id' => true
+        'modified' => true
     ];
 
     /**

@@ -7,19 +7,23 @@ use Cake\ORM\Entity;
  * Caso Entity
  *
  * @property int $id
- * @property string $num_caso
- * @property string $solicitud
- * @property string $gravedad
- * @property int $usuario_id
- * @property int $usuario_departamento_id
  * @property int $empresa_id
  * @property int $tipo_asistencia_id
+ * @property int $gravedad_id
+ * @property int $usuario_id
+ * @property int $usuario_departamento_id
+ * @property string $num_caso
+ * @property string $solicitud
+ * @property int $tiempo
+ * @property bool $si_solucionado
+ * @property string $observaciones
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  *
- * @property \App\Model\Entity\Usuario $usuario
  * @property \App\Model\Entity\Empresa $empresa
  * @property \App\Model\Entity\TipoAsistencia $tipo_asistencia
+ * @property \App\Model\Entity\Gravedad $gravedad
+ * @property \App\Model\Entity\Usuario $usuario
  */
 class Caso extends Entity
 {
@@ -36,11 +40,14 @@ class Caso extends Entity
     protected $_accessible = [
         'num_caso' => true,
         'solicitud' => true,
-        'gravedad' => true,
+        'tiempo' => true,
+        'si_solucionado' => true,
+        'observaciones' => true,
         'created' => true,
         'modified' => true,
-        'usuario' => true,
         'empresa' => true,
-        'tipo_asistencia' => true
+        'tipo_asistencia' => true,
+        'gravedad' => true,
+        'usuario' => true
     ];
 }

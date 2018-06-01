@@ -23,12 +23,13 @@
     <fieldset>
         <legend><?= __('Edit Usuario') ?></legend>
         <?php
-            echo $this->Form->control('departamento_id', ['options' => $departamentos]);
-            echo $this->Form->control('nombre');
-            echo $this->Form->control('apellido');
-            echo $this->Form->control('email');
-            echo $this->Form->control('password');
-            echo $this->Form->control('telefono');
+        echo $this->Form->control('nombre');
+        echo $this->Form->control('apellido');
+        echo $this->Form->control('email');
+        echo $this->Form->control('password');
+        echo $this->Form->control('telefono');
+        echo $this->Form->control('extension');
+        echo $this->Form->control('departamento_id', ['options' => $departamentos]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

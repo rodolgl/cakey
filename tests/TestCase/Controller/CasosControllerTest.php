@@ -17,9 +17,10 @@ class CasosControllerTest extends IntegrationTestCase
      */
     public $fixtures = [
         'app.casos',
-        'app.usuarios',
         'app.empresas',
-        'app.tipo_asistencias'
+        'app.tipo_asistencias',
+        'app.gravedades',
+        'app.usuarios'
     ];
 
     /**

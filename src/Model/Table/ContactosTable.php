@@ -36,7 +36,7 @@ class ContactosTable extends Table
 
         $this->setTable('contactos');
         $this->setDisplayField('id');
-        $this->setPrimaryKey(['id', 'empresa_id']);
+        $this->setPrimaryKey(['id']);
 
         $this->addBehavior('Timestamp');
 

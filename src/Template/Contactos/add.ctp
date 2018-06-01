@@ -21,6 +21,10 @@
             echo $this->Form->control('apellido');
             echo $this->Form->control('telefono');
             echo $this->Form->control('email');
+            echo $this->Form->control('empresa_id', [
+                'options' => $empresas,
+                'empty' => 'Seleccione'
+            ]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Enviar')) ?>

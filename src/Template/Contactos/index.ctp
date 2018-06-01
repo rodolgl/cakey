@@ -17,14 +17,12 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
+
                 <th scope="col"><?= $this->Paginator->sort('empresa_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('nombre') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('apellido') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('telefono') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('email') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                  <th scope="col" class="actions"><?= __('Acciones') ?></th>
             </tr>
         </thead>
@@ -37,8 +35,6 @@
                 <td><?= h($contacto->apellido) ?></td>
                 <td><?= h($contacto->telefono) ?></td>
                 <td><?= h($contacto->email) ?></td>
-                <td><?= h($contacto->created) ?></td>
-                <td><?= h($contacto->modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $contacto->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $contacto->id]) ?>

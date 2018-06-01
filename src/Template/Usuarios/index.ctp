@@ -22,6 +22,7 @@
                 <th scope="col"><?= $this->Paginator->sort('apellido') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('email') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('telefono') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('extension') ?></th>
                  <th scope="col" class="actions"><?= __('Acciones') ?></th>
             </tr>
         </thead>
@@ -33,8 +34,9 @@
                 <td><?= h($usuario->apellido) ?></td>
                 <td><?= h($usuario->email) ?></td>
                 <td><?= h($usuario->telefono) ?></td>
+                <td><?= h($usuario->extension) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $usuario->id]) ?>
+                    <!-- <?= $this->Html->link(__('View'), ['action' => 'view', $usuario->id]) ?> -->
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $usuario->id]) ?>
                     <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $usuario->id], ['confirm' => __('Are you sure you want to delete # {0}?', $usuario->id)]) ?>
                 </td>

@@ -36,6 +36,8 @@ class Contacto extends Entity
         'email' => true,
         'created' => true,
         'modified' => true,
-        'empresa' => true
+        'empresa_id' => true,
+        'created' => true,
+        'modified' => true
     ];
 }

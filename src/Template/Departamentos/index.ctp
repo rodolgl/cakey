@@ -17,11 +17,9 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
+
                 <th scope="col"><?= $this->Paginator->sort('nombre') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
-                 <th scope="col" class="actions"><?= __('Acciones') ?></th>
+                                 <th scope="col" class="actions"><?= __('Acciones') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -29,8 +27,6 @@
             <tr>
                 <td><?= $this->Number->format($departamento->id) ?></td>
                 <td><?= h($departamento->nombre) ?></td>
-                <td><?= h($departamento->created) ?></td>
-                <td><?= h($departamento->modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $departamento->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $departamento->id]) ?>

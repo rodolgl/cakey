@@ -17,12 +17,10 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
+
                 <th scope="col"><?= $this->Paginator->sort('empresa_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('tiempo_sat_remoto') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('tiempo_sat_insitu') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                  <th scope="col" class="actions"><?= __('Acciones') ?></th>
             </tr>
         </thead>
@@ -33,8 +31,6 @@
                 <td><?= $contrato->has('empresa') ? $this->Html->link($contrato->empresa->id, ['controller' => 'Empresas', 'action' => 'view', $contrato->empresa->id]) : '' ?></td>
                 <td><?= h($contrato->tiempo_sat_remoto) ?></td>
                 <td><?= h($contrato->tiempo_sat_insitu) ?></td>
-                <td><?= h($contrato->created) ?></td>
-                <td><?= h($contrato->modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $contrato->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $contrato->id]) ?>

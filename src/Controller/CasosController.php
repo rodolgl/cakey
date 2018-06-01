@@ -21,7 +21,7 @@ class CasosController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Usuarios', 'Empresas', 'TipoAsistencias']
+            'contain' => ['Empresas', 'TipoAsistencias', 'Gravedades', 'Usuarios']
         ];
         $casos = $this->paginate($this->Casos);
 
@@ -38,7 +38,7 @@ class CasosController extends AppController
     public function view($id = null)
     {
         $caso = $this->Casos->get($id, [
-            'contain' => ['Usuarios', 'Empresas', 'TipoAsistencias']
+            'contain' => ['Empresas', 'TipoAsistencias', 'Gravedades', 'Usuarios']
         ]);
 
         $this->set('caso', $caso);
@@ -55,16 +55,17 @@ class CasosController extends AppController
         if ($this->request->is('post')) {
             $caso = $this->Casos->patchEntity($caso, $this->request->getData());
             if ($this->Casos->save($caso)) {
-                $this->Flash->success(__('The caso ha sido guardado.'));
+                $this->Flash->success(__('The caso has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The caso could not be saved.Por favor, inténtelo de nuevo.'));
         }
-        $usuarios = $this->Casos->Usuarios->find('list', ['limit' => 200]);
         $empresas = $this->Casos->Empresas->find('list', ['limit' => 200]);
         $tipoAsistencias = $this->Casos->TipoAsistencias->find('list', ['limit' => 200]);
-        $this->set(compact('caso', 'usuarios', 'empresas', 'tipoAsistencias'));
+        $gravedades = $this->Casos->Gravedades->find('list', ['limit' => 200]);
+        $usuarios = $this->Casos->Usuarios->find('list', ['limit' => 200]);
+        $this->set(compact('caso', 'empresas', 'tipoAsistencias', 'gravedades', 'usuarios'));
     }
 
     /**
@@ -82,16 +83,17 @@ class CasosController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $caso = $this->Casos->patchEntity($caso, $this->request->getData());
             if ($this->Casos->save($caso)) {
-                $this->Flash->success(__('The caso ha sido guardado.'));
+                $this->Flash->success(__('The caso has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The caso could not be saved.Por favor, inténtelo de nuevo.'));
         }
-        $usuarios = $this->Casos->Usuarios->find('list', ['limit' => 200]);
         $empresas = $this->Casos->Empresas->find('list', ['limit' => 200]);
         $tipoAsistencias = $this->Casos->TipoAsistencias->find('list', ['limit' => 200]);
-        $this->set(compact('caso', 'usuarios', 'empresas', 'tipoAsistencias'));
+        $gravedades = $this->Casos->Gravedades->find('list', ['limit' => 200]);
+        $usuarios = $this->Casos->Usuarios->find('list', ['limit' => 200]);
+        $this->set(compact('caso', 'empresas', 'tipoAsistencias', 'gravedades', 'usuarios'));
     }
 
     /**

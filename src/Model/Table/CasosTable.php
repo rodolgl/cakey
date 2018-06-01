@@ -9,10 +9,11 @@ use Cake\Validation\Validator;
 /**
  * Casos Model
  *
- * @property \App\Model\Table\UsuariosTable|\Cake\ORM\Association\BelongsTo $Usuarios
- * @property \App\Model\Table\UsuariosTable|\Cake\ORM\Association\BelongsTo $Usuarios
  * @property \App\Model\Table\EmpresasTable|\Cake\ORM\Association\BelongsTo $Empresas
  * @property \App\Model\Table\TipoAsistenciasTable|\Cake\ORM\Association\BelongsTo $TipoAsistencias
+ * @property \App\Model\Table\GravedadesTable|\Cake\ORM\Association\BelongsTo $Gravedades
+ * @property \App\Model\Table\UsuariosTable|\Cake\ORM\Association\BelongsTo $Usuarios
+ * @property \App\Model\Table\UsuariosTable|\Cake\ORM\Association\BelongsTo $Usuarios
  *
  * @method \App\Model\Entity\Caso get($primaryKey, $options = [])
  * @method \App\Model\Entity\Caso newEntity($data = null, array $options = [])
@@ -39,24 +40,28 @@ class CasosTable extends Table
 
         $this->setTable('casos');
         $this->setDisplayField('id');
-        $this->setPrimaryKey(['id', 'usuario_id', 'usuario_departamento_id', 'empresa_id', 'tipo_asistencia_id']);
+        $this->setPrimaryKey(['id']);
 
         $this->addBehavior('Timestamp');
 
-        $this->belongsTo('Usuarios', [
-            'foreignKey' => 'usuario_id',
-            'joinType' => 'INNER'
-        ]);
-        $this->belongsTo('Usuarios', [
-            'foreignKey' => 'usuario_departamento_id',
-            'joinType' => 'INNER'
-        ]);
         $this->belongsTo('Empresas', [
             'foreignKey' => 'empresa_id',
             'joinType' => 'INNER'
         ]);
         $this->belongsTo('TipoAsistencias', [
             'foreignKey' => 'tipo_asistencia_id',
+            'joinType' => 'INNER'
+        ]);
+        $this->belongsTo('Gravedades', [
+            'foreignKey' => 'gravedad_id',
+            'joinType' => 'INNER'
+        ]);
+        $this->belongsTo('Usuarios', [
+            'foreignKey' => 'usuario_id',
+            'joinType' => 'INNER'
+        ]);
+        $this->belongsTo('Usuarios', [
+            'foreignKey' => 'usuario_departamento_id',
             'joinType' => 'INNER'
         ]);
     }
@@ -85,9 +90,17 @@ class CasosTable extends Table
             ->notEmpty('solicitud');
 
         $validator
-            ->scalar('gravedad')
-            ->maxLength('gravedad', 45)
-            ->allowEmpty('gravedad');
+            ->integer('tiempo')
+            ->allowEmpty('tiempo');
+
+        $validator
+            ->boolean('si_solucionado')
+            ->requirePresence('si_solucionado', 'create')
+            ->notEmpty('si_solucionado');
+
+        $validator
+            ->scalar('observaciones')
+            ->allowEmpty('observaciones');
 
         return $validator;
     }
@@ -101,10 +114,11 @@ class CasosTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['usuario_id'], 'Usuarios'));
-        $rules->add($rules->existsIn(['usuario_departamento_id'], 'Usuarios'));
         $rules->add($rules->existsIn(['empresa_id'], 'Empresas'));
         $rules->add($rules->existsIn(['tipo_asistencia_id'], 'TipoAsistencias'));
+        $rules->add($rules->existsIn(['gravedad_id'], 'Gravedades'));
+        $rules->add($rules->existsIn(['usuario_id'], 'Usuarios'));
+        $rules->add($rules->existsIn(['usuario_departamento_id'], 'Usuarios'));
 
         return $rules;
     }

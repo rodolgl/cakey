@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c267b48ce7e8479d046c84d265a0788a",
+    "content-hash": "3233ff44d5cc7dda45cbc5e684732491",
     "packages": [
         {
             "name": "aura/intl",
@@ -288,6 +288,47 @@
             ],
             "description": "A composer installer for CakePHP 3.0+ plugins.",
             "time": "2017-12-24T21:09:29+00:00"
+        },
+        {
+            "name": "drmonkeyninja/cakephp-font-awesome",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/drmonkeyninja/cakephp-font-awesome.git",
+                "reference": "35d88f4f4231bda2bc4ed7c78eb77123811a0084"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/drmonkeyninja/cakephp-font-awesome/zipball/35d88f4f4231bda2bc4ed7c78eb77123811a0084",
+                "reference": "35d88f4f4231bda2bc4ed7c78eb77123811a0084",
+                "shasum": ""
+            },
+            "require": {
+                "cakephp/cakephp": "~3.0"
+            },
+            "type": "cakephp-plugin",
+            "autoload": {
+                "psr-4": {
+                    "FontAwesome\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andy Carter",
+                    "role": "Author"
+                }
+            ],
+            "description": "CakePHP helper for creating Font Awesome links",
+            "homepage": "https://github.com/drmonkeyninja/cakephp-font-awesome",
+            "keywords": [
+                "cakephp",
+                "helper"
+            ],
+            "time": "2017-02-17T10:44:42+00:00"
         },
         {
             "name": "josegonzalez/dotenv",

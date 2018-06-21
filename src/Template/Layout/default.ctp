@@ -5,7 +5,7 @@
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
+ * whiteistributions of files must retain the above copyright notice.
  *
  * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  * @link          https://cakephp.org CakePHP(tm) Project
@@ -42,92 +42,158 @@ $cakeDescription = 'CRM de Keytron';
     <div id="cssmenu">
     <ul>
         <!--<li class="active"><a href="/">Inicio</a></li>-->
-        <li class="has-sub"><?php echo $this->Html->link('<i class="fa fa-shopping-cart"></i> COMPRAS','#',['escape' => false]);?>
+        <li>
+            <?php echo $this->Html->link('<i class="fas fa-home fa-lg"></i>', '/', [
+                'style'=> 'color:white',
+                'escape' => false
+            ]);?>
+        </li>
+        <li><?php echo $this->Html->link('<i class="fas fa-inbox fa-lg"></i>','#', [
+            'style'=> 'color:white',
+            'escape' => false
+        ]);?>
             <ul>
-                <li class="has-sub"><?php echo $this->Html->link('Contratos','/contratos',['escape' => false]);?>
-                    <ul>
-                        <li class="last"><?php echo $this->Html->link('Peso Pendiente','/contratos/index_left',['escape' => false]);?></li>
-                    </ul>
-                </li>
-                <li class="has-sub"><?php echo $this->Html->link('Operaciones','/operacion_compras',['escape' => false]);?>
-                    <ul>
-                        <li ><?php echo $this->Html->link('Compras','/operacion_compras',['escape' => false]);?></li>
-                        <li class="last"><?php echo $this->Html->link('Ventas','/operacion_ventas',['escape' => false]);?></li>
-                    </ul>
-                </li>
+                <li><?php echo $this->Html->link('casos','/casos',[
+         'style'=> 'color:cyan',
+         'escape' => false
+     ]);?></li>
+                <li><?php echo $this->Html->link('nuevo caso','/casos/add',[
+         'style'=> 'color:yellow',
+         'escape' => false
+     ]);?></li>
             </ul>
         </li>
-        <li><?php echo $this->Html->link('<i class="fa fa-flask"></i> LABORATORIO','#',['escape' => false]);?>
+        <li class="has-sub"><?php echo $this->Html->link('<i class="fa fa-ship"></i>','#', [
+         'style'=> 'color:white',
+         'escape' => false
+     ]);?>
             <ul>
-                <li><?php echo $this->Html->link('ENTREGA','/muestras/index/Search.tipo_id:3',['escape' => false]);?></li>
-                <li><?php echo $this->Html->link('Contratos','/contratos',['escape' => false]);?></li>
-            </ul>
-        </li>
-        <li class="has-sub"><?php echo $this->Html->link('<i class="fa fa-ship"></i> TRAFICO','#', ['escape' => false]);?>
-            <ul>
-                <li class="has-sub"><?php echo $this->Html->link('Operaciones','#',['escape' => false]);?>
+                <li class="has-sub"><?php echo $this->Html->link('Operaciones','#',[
+         'style'=> 'color:white',
+         'escape' => false
+     ]);?>
                     <ul>
-                        <li ><?php echo $this->Html->link('Compras','/operacion_compras/index_trafico',['escape' => false]);?></li>
-                        <li class="last"><?php echo $this->Html->link('Ventas','/operacion_ventas',['escape' => false]);?></li>
+                        <li ><?php echo $this->Html->link('Compras','/operacion_compras/index_trafico',[
+         'style'=> 'color:white',
+         'escape' => false
+     ]);?></li>
+                        <li class="last"><?php echo $this->Html->link('Ventas','/operacion_ventas',[
+         'style'=> 'color:green',
+         'escape' => false
+     ]);?></li>
                     </ul>
                 </li>
-                <li><?php echo $this->Html->link('TRANSPORTE','/transportes',['escape' => false]);?></li>
-                <li><?php echo $this->Html->link('FLETES','/fletes',['escape' => false]);?></li>
-                <li class="has-sub"><?php echo $this->Html->link('Informes','#',['escape' => false]);?>
+                <li><?php echo $this->Html->link('TRANSPORTE','/transportes',[
+         'style'=> 'color:orange',
+         'escape' => false
+     ]);?></li>
+                <li><?php echo $this->Html->link('FLETES','/fletes',[
+         'style'=> 'color:white',
+         'escape' => false
+     ]);?></li>
+                <li class="has-sub"><?php echo $this->Html->link('Informes','#',[
+         'style'=> 'color:white',
+         'escape' => false
+     ]);?>
                     <ul>
-                        <li><?php echo $this->Html->link('Despachos','/transportes/despacho',['escape' => false]);?></li>
-                        <li><?php echo $this->Html->link('Stocks','/retirada_pendientes/stock',['escape' => false]);?></li>
-                        <li class="last"><?php echo $this->Html->link('Prórrogas','/retirada_transporte_pendientes',['escape' => false]);?></li>
+                        <li><?php echo $this->Html->link('Despachos','/transportes/despacho',[
+         'style'=> 'color:white',
+         'escape' => false
+     ]);?></li>
+                        <li><?php echo $this->Html->link('Stocks','/retirada_pendientes/stock',[
+         'style'=> 'color:white',
+         'escape' => false
+     ]);?></li>
+                        <li class="last"><?php echo $this->Html->link('Prórrogas','/retirada_transporte_pendientes',[
+         'style'=> 'color:white',
+         'escape' => false
+     ]);?></li>
 
                     </ul>
                 </li>
             </ul>
         </li>
-        <li class="has-sub"><?php echo $this->Html->link('<i class="fa fa-money"></i> CONTABILIDAD','#',['escape' => false]);?>
+        <li class="has-sub"><?php echo $this->Html->link('<i class="fas fa-money data"></i>','#',[
+         'style'=> 'color:white',
+         'escape' => false
+     ]);?>
             <ul>
-                <li class="has-sub"><?php echo $this->Html->link('Operaciones','#',['escape' => false]);?>
+                <li class="has-sub"><?php echo $this->Html->link('Operaciones','#',[
+         'style'=> 'color:white',
+         'escape' => false
+     ]);?>
                     <ul>
-                        <li><?php echo $this->Html->link('Compras','/operacion_compras',['escape' => false]);?></li>
-                        <li class="last"><?php echo $this->Html->link('Ventas','/operacion_ventas/index_conta',['escape' => false]);?></li>
+                        <li><?php echo $this->Html->link('Compras','/operacion_compras',[
+         'style'=> 'color:white',
+         'escape' => false
+     ]);?></li>
+                        <li class="last"><?php echo $this->Html->link('Ventas','/operacion_ventas/index_conta',[
+         'style'=> 'color:white',
+         'escape' => false
+     ]);?></li>
                     </ul>
                 </li>
-                <li class="has-sub"><?php echo $this->Html->link('FINANCIACIÓN', '/financiaciones', ['escape' => false]);?>
+                <li class="has-sub"><?php echo $this->Html->link('FINANCIACIÓN', '/financiaciones', [
+         'style'=> 'color:white',
+         'escape' => false
+     ]);?>
                     <ul>
-                        <li class="last"><?php echo $this->Html->link('ANTICIPOS', '/anticipos', ['escape' => false]);?></li>
+                        <li class="last"><?php echo $this->Html->link('ANTICIPOS', '/anticipos', [
+         'style'=> 'color:white',
+         'escape' => false
+     ]);?></li>
                     </ul>
                 </li>
-                <li class="has-sub"><?php echo $this->Html->link('Facturación', '#', ['escape' => false]);?>
+                <li class="has-sub"><?php echo $this->Html->link('Facturación', '#', [
+         'style'=> 'color:white',
+         'escape' => false
+     ]);?>
                     <ul>
-                        <li><?php echo $this->Html->link('FACTURADAS','/operacion_ventas/facturadas',['escape' => false]);?></li>
-                                <li class="last"><?php echo $this->Html->link('PLANTILLAS','/plantilla_facturas',['escape' => false]);?></li>
+                        <li><?php echo $this->Html->link('FACTURADAS','/operacion_ventas/facturadas',[
+         'style'=> 'color:white',
+         'escape' => false
+     ]);?></li>
+                                <li class="last"><?php echo $this->Html->link('PLANTILLAS','/plantilla_facturas',[
+         'style'=> 'color:white',
+         'escape' => false
+     ]);?></li>
                     </ul>
                 </li>
 
-                <li class="has-sub"><?php echo $this->Html->link('Informes','#',['escape' => false]);?>
+                <li class="has-sub"><?php echo $this->Html->link('Informes','#',[
+         'style'=> 'color:white',
+         'escape' => false
+     ]);?>
                     <ul>
-                        <li><?php echo $this->Html->link('Despachos','/operacion_ventas/despacho',['escape' => false]);?></li>
-                        <li><?php echo $this->Html->link('Sacos sin adjudicar','/almacen_transportes/pendiente',['escape' => false]);?></li>
+                        <li><?php echo $this->Html->link('Despachos','/operacion_ventas/despacho',[
+         'style'=> 'color:white',
+         'escape' => false
+     ]);?></li>
+                        <li><?php echo $this->Html->link('Sacos sin adjudicar','/almacen_transportes/pendiente',[
+         'style'=> 'color:white',
+         'escape' => false
+     ]);?></li>
                     </ul>
                 </li>
             </ul>
         </li>
-        <li><?php echo $this->Html->link('<i class="fa fa-database"></i> DATOS','/pages/gestiondatos',['escape' => false]);?>
-        <li><a href="/users/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Salir</a></li>
+        <li><?php echo $this->Html->link('<i class="fas fa-database fa-lg"></i>','/pages/datos',[
+         'style'=> 'color:white',
+         'escape' => false
+     ]);?>
+        <li><a href="/users/logout"><i class="fas fa-sign-out" aria-hidden="true"></i> Salir</a></li>
     </ul>
+
     </div>
     <nav class="top-bar expanded" data-topbar role="navigation">
         <ul class="title-area large-3 medium-4 columns">
             <li class="name">
-                <h1><a href=""><?= $this->fetch('title') ?></a></h1>
+                <?php
+                echo $this->Html->image('logokeytron_w.png');
+                ?>
+                <!-- <h1 style='text-transform: uppercase;'><a href=""><?= $this->fetch('title') ?></a></h1> -->
             </li>
         </ul>
-        <div class="top-bar-section">
-            <ul class="right">
-                <li><?php echo $this->Html->image('logokeytron_w.png');?></li>
-                <li><a target="_blank" href="https://book.cakephp.org/3.0/">Documentation</a></li>
-                <!-- <li><a target="_blank" href="https://api.cakephp.org/3.0/">API</a></li> -->
-            </ul>
-        </div>
     </nav>
     <?= $this->Flash->render() ?>
     <div class="container clearfix">

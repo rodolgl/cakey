@@ -589,9 +589,9 @@ table td {
 #cssmenu{
 	background: #01545b;
 	/*border-bottom: 4px solid #01545b;*/
-	/*font-family: 'Oxygen Mono', Tahoma, Arial, sans-serif;*/
+	font-family: 'Dosis', Arial, sans-serif;
 	font-size: 12px;
-	/* width: 75%; */
+	width: 65%;
 	float: right;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#308e97), to(#01545b));
 	background-image: -webkit-linear-gradient(top, #308e97, #01545b);
@@ -617,18 +617,18 @@ table td {
 	min-width: 160px;
 }
 #cssmenu ul ul a {
-	background: #7dd999;
+	background: #308e97;
 	color: #000;
 	border: 1px solid #bbb;
 	border-top: 0 none;
 	line-height: 150%;
 	padding: 10px 12px;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#308e97), to(#01545b));
-	background-image: -webkit-linear-gradient(top, #308e97, #01545b);
-	background-image: -moz-linear-gradient(top, #308e97, #01545b);
-	background-image: -ms-linear-gradient(top, #308e97, #01545b);
-	background-image: -o-linear-gradient(top, #308e97, #01545b);
-	background-image: linear-gradient(top, #308e97, #01545b);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#01545b), to(#01545b));
+	background-image: -webkit-linear-gradient(top, #01545b, #01545b);
+	background-image: -moz-linear-gradient(top, #01545b, #01545b);
+	background-image: -ms-linear-gradient(top, #01545b, #01545b);
+	background-image: -o-linear-gradient(top, #01545b, #01545b);
+	background-image: linear-gradient(top, #01545b, #01545b);
 }
 #cssmenu ul ul ul {
     border-top: 0 none;
@@ -642,7 +642,7 @@ table td {
 	border-top: 1px solid #bbb;
 }
 #cssmenu ul ul li:hover > a {
-	background: #7dd999;
+	background: #308e97;
 }
 #cssmenu ul ul li:last-child > a {
 	-moz-border-radius: 0 0 3px 3px;
